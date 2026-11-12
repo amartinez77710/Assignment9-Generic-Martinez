@@ -105,7 +105,10 @@ class vectorMimic{
 		std::cout << "Sliced array of (" << begin << ", " << end << ")" << std::endl;
 		for(int i = 0; i < newSize; i++){
 			std::cout << slicedArray[i] << std::endl;
-		}	
+		}
+		
+		//Allocation
+		delete[] slicedArray;	
 		
 	}
 
@@ -115,11 +118,12 @@ class vectorMimic{
 int main(){
 	vectorMimic<double> array1;
 
-	//Array of (10,20,30,40)
+	//Array of (10,20,30,40,50)
 	array1.addElement(10);
 	array1.addElement(20);
 	array1.addElement(30);
 	array1.addElement(40);
+	array1.addElement(50);
 
 	//want array value at array(2). Should be 30 
 	array1.at(2);
@@ -133,7 +137,7 @@ int main(){
 	std::cout << "min of array is: " << array1.min() << std::endl;
 
 	//SLICE
-	array1.slice(1,4);
+	array1.slice(2,4);
 
 	return 0;
 
